@@ -40,7 +40,51 @@ This repository contains the stuffs related to GitHub Actions. I just recently s
   </figure>
     
 
-## Contribute
+## GH Actions
+
+- GH Actions lets us run shell commands against our repo code using GH's cloud infrastructure and is triggered on an event, like a commit, a PR or on a schedule.
+- GitHub Actions is a free service which can run on a repo if it's configured
+- It basically works as a CI server.
+- It's structure is like :
+  - `.github/workflows/` in this folder we can add github actions workflows, which are basically yaml file, where we define the respective GH actions
+- Concepts :
+  - Workflow :
+    - actions config is a 'workflow' of tiggers and steps
+    - a workflow is a yaml file in `.github/workflows/` folder, ex : `.github/workflows/main.yml`
+  - Job :
+    - the job is the what actually executes
+    - a workflow can consist of one or more jobs
+  - Runner :
+  
+  - Events :
+
+## Demo (Create a simple GH Action)
+
+You can create GH Action in two ways : 
+
+1. one is by clicking the Actions tab and following the instructions : 
+    - choose a github repo
+    - Click the `Actions` tab on your repo
+    - go for simple workflow (or any other given workflows as your need), then just change the `yml` file as your need
+2. by adding yaml files (containing the github actions code) in `.github/workflows/` folder, like :
+    - `.github/workflows/main.yml` : 
+      - ```yaml
+        name: CI
+        
+        on: push
+        
+        jobs:
+          build:
+          runs-on: ubuntu-latest
+          
+              steps:
+                - uses: actions/checkout@v2
+          
+                - name: Run a one-line script
+                  run: echo "Hello, world!"
+        ```
+
+# Contribute
 
 You are very much welcome to contribute on this repo, you can open an issue or PR for contributing on this repo. 
 
@@ -48,4 +92,5 @@ You are very much welcome to contribute on this repo, you can open an issue or P
 
 - [DevOps CI/CD Explained in 100 Seconds](https://www.youtube.com/watch?v=scEDHsr3APg)
 - [What is CI CD | What is CI CD Pipeline | Interview questions](https://www.youtube.com/watch?v=k2aNsQKwyOo)
-
+- [Getting Started with GitHub Actions](https://www.youtube.com/watch?v=KUxg-7U9EKM)
+- [Example](https://dev.to/michaelcurrin/intro-tutorial-to-ci-cd-with-github-actions-2ba8)
