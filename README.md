@@ -58,6 +58,12 @@ This repository contains the stuffs related to GitHub Actions. I just recently s
   
   - Events :
 
+- Self Hosted Runner :
+  - we can use a self hosted runner (third-party) as CI server instead of github hosted runners, the server will listen to jobs (push to branch, as specified) and then it will do the steps
+  - To use this see [doc](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) for details
+  - for setting up self hosted runners see [doc](https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners)
+  - Warning: We recommend that you only use self-hosted runners with private repositories. This is because forks of your repository can potentially run dangerous code on your self-hosted runner machine by creating a pull request that executes the code in a workflow.
+
 ## Demo (Create a simple GH Action)
 
 You can create GH Action in two ways : 
