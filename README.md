@@ -42,6 +42,9 @@ This repository contains the stuffs related to GitHub Actions. I just recently s
 
 ## GH Actions
 
+- GH Actions is a platform to automate software developers workflows
+- CI/CD is one of many workflows, though some refers GH actions is a CI/CD platform  
+- CI/CD pipeline with GitHub Actions
 - GH Actions lets us run shell commands against our repo code using GH's cloud infrastructure and is triggered on an event, like a commit, a PR or on a schedule.
 - GitHub Actions is a free service which can run on a repo if it's configured
 - It basically works as a CI server.
@@ -54,6 +57,7 @@ This repository contains the stuffs related to GitHub Actions. I just recently s
   - Job :
     - the job is the what actually executes
     - a workflow can consist of one or more jobs
+    - if we define more than one job then by default all jobs run in parallel, but if we have any dependency then we need to overwrite the default value by `needs: <name_of_the_parent_job>` inside a job
   - Runner :
   
   - Events :
@@ -63,6 +67,12 @@ This repository contains the stuffs related to GitHub Actions. I just recently s
   - To use this see [doc](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) for details
   - for setting up self hosted runners see [doc](https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners)
   - Warning: We recommend that you only use self-hosted runners with private repositories. This is because forks of your repository can potentially run dangerous code on your self-hosted runner machine by creating a pull request that executes the code in a workflow.
+
+- Benefits of GitHub Actions:
+  - CI/CD with github actions
+  - use same tool (github) instead of another third-party CI/CD tool to integrate in github
+  - setup the pipeline is easy
+  
 
 ## Demo (Create a simple GH Action)
 
@@ -100,3 +110,5 @@ You are very much welcome to contribute on this repo, you can open an issue or P
 - [What is CI CD | What is CI CD Pipeline | Interview questions](https://www.youtube.com/watch?v=k2aNsQKwyOo)
 - [Getting Started with GitHub Actions](https://www.youtube.com/watch?v=KUxg-7U9EKM)
 - [Example](https://dev.to/michaelcurrin/intro-tutorial-to-ci-cd-with-github-actions-2ba8)
+- [GitHub Actions Tutorial - Basic Concepts and CI/CD Pipeline with Docker](https://www.youtube.com/watch?v=R8_veQiYBjI)
+
